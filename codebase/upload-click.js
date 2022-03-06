@@ -39,7 +39,7 @@ let tags = "meme, handsome,";
 
   //Choose the right file by autoIT
   let exec = require("child_process").execFile;
-  exec("uploadMeme.exe");
+  exec("../uploadMeme.exe");
 
   // Can't wait for the title and tags because they are always there
   // Times out but doesn't crash so the script can continue
