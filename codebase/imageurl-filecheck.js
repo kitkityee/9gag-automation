@@ -7,7 +7,10 @@ const email = "kit-tester@outlook.com";
 const password = "badPasswordThatShouldNotBeUsed";
 
 //URL for checking
-const fileBig ="url"
+const fileBig = {
+  name: "fileBig",
+  url: ""
+}
 const highDimension ="url"
 const emptyFile ="url"
 const etc ="url"
@@ -44,11 +47,11 @@ const etc ="url"
 
   //Input image URL
   await driver.wait(until.elementLocated(By.id("jsid-upload-url-input")), 10000);
-  await driver.findElement(By.linkText("jsid-upload-url-input")).sendKeys(file);
+  await driver.findElement(By.linkText("jsid-upload-url-input")).sendKeys(file.url);
 
   //Take a screenshot and store them with corresponding names
   let screenshot = await driver.takeScreenshot();
-  fs.writeFileSync(`./Screenshots/imageurl/${file}.png`, screenshot, "base64");
+  fs.writeFileSync(`./Screenshots/imageurl/${file.name}.png`, screenshot, "base64");
   
   //Close the browser
   await driver.quit();

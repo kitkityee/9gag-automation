@@ -7,6 +7,9 @@ const service = new chrome.ServiceBuilder("driver-autoit/chromedriver.exe");
 let email = "kit-tester@outlook.com";
 let password = "badPasswordThatShouldNotBeUsed";
 
+
+
+
 (async function test9GAGfiles(files) {
   let driver = new Builder()
     .forBrowser("chrome")
@@ -31,7 +34,7 @@ let password = "badPasswordThatShouldNotBeUsed";
 
   //Choose differnt files using different autoIT exe
   let exec = require("child_process").execFile;
-  exec(files);
+  exec(`${files}.exe`);
 
   //Save screenshot with corresponding names
   let screenshot = await driver.takeScreenshot();
@@ -41,9 +44,9 @@ let password = "badPasswordThatShouldNotBeUsed";
 })();
 
 //Compile different exe with different file path
-test9GAGfiles("tooBigFile.exe"); //File that's too big
-test9GAGfiles("highDimension.exe"); //File with too high dimensions
-test9GAGfiles("emptyFile.exe"); //Empty or corrupted file
-test9GAGfiles("invalidType.exe"); //Invalid file type e.g. svg
-test9GAGfiles("boundarySizeAbove.exe"); //10.1MB
-test9GAGfiles("boundarySizeBelow.exe"); //9.9MB
+test9GAGfiles("tooBigFile"); //File that's too big
+test9GAGfiles("highDimension"); //File with too high dimensions
+test9GAGfiles("emptyFile"); //Empty or corrupted file
+test9GAGfiles("invalidType"); //Invalid file type e.g. svg
+test9GAGfiles("boundarySizeAbove"); //10.1MB
+test9GAGfiles("boundarySizeBelow"); //9.9MB
