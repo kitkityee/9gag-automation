@@ -11,9 +11,18 @@ const fileBig = {
   name: "fileBig",
   url: ""
 }
-const highDimension ="url"
-const emptyFile ="url"
-const etc ="url"
+const highDimension ={
+  name: "highDimension",
+  url: ""
+}
+const emptyFile ={
+  name: "emptyFile",
+  url: ""
+}
+const etc ={
+  name: "etc",
+  url: ""
+}
 
 
 (async function test9GAGImageURLfile(file) {
